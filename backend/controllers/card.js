@@ -1,12 +1,13 @@
 const cardModel = require('../models/card');
-const {
-  DefaultError, IncorrectDataError, NotFoundError, ForbiddenError,
-} = require('../errors/errors');
+const DefaultError = require('../errors/DefaultError');
+const IncorrectDataError = require('../errors/IncorrectDataError');
+const NotFoundError = require('../errors/NotFoundError');
+const ForbiddenError = require('../errors/ForbiddenError');
 
 function getCards(req, res, next) {
   cardModel.find({}, null, { sort: { createdAt: -1 } })
     .then((cards) => res.send(cards)) // фильтрует овнеров-объекты (а не строки или id)
-    .catch((err) => next(new DefaultError(`получение карточек: ${err.message}`)));
+    .catch(() => next(new DefaultError('Произошла ошибка при получении карточек')));
 }
 
 function createCard(req, res, next) {
@@ -26,7 +27,8 @@ function deleteCard(req, res, next) {
       else if (String(card.owner) !== String(req.user._id)) next(new ForbiddenError('чужая карточка'));
       else {
         cardModel.findByIdAndDelete(req.params.cardId)
-          .then(() => res.send({ message: 'Пост удалён' }));
+          .then(() => res.send({ message: 'Пост удалён' }))
+          .catch(next);
       }
     })
     .catch((err) => {
@@ -47,7 +49,7 @@ function putLike(req, res, next) {
     })
     .catch((err) => {
       if (err.name === 'CastError') next(new IncorrectDataError('ID карточки'));
-      else next(new DefaultError(`добавление лайка: ${err.message}`));
+      else next(new DefaultError('Произошла ошибка при добавлении лайка'));
     });
 }
 
@@ -63,7 +65,7 @@ function deleteLike(req, res, next) {
     })
     .catch((err) => {
       if (err.name === 'CastError') next(new IncorrectDataError('ID карточки'));
-      else next(new DefaultError(`удаление лайка: ${err.message}`));
+      else next(new DefaultError('Произошла ошибка при удаление лайка'));
     });
 }
 

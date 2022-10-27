@@ -2,14 +2,16 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const userModel = require('../models/user');
-const {
-  UnauthorizedError, IncorrectDataError, DefaultError, NotFoundError, ConflictError,
-} = require('../errors/errors');
+const DefaultError = require('../errors/DefaultError');
+const IncorrectDataError = require('../errors/IncorrectDataError');
+const NotFoundError = require('../errors/NotFoundError');
+const ConflictError = require('../errors/ConflictError');
+const UnauthorizedError = require('../errors/UnauthorizedError');
 
 function getUsers(req, res, next) {
   userModel.find({})
     .then((users) => res.send(users))
-    .catch((err) => next(new DefaultError(`ошибка получения пользователя: ${err.message}`)));
+    .catch(() => next(new DefaultError('Произошла ошибка при получении пользователей')));
 }
 
 function getUser(req, res, next) {
@@ -20,7 +22,7 @@ function getUser(req, res, next) {
     })
     .catch((err) => {
       if (err.name === 'CastError') next(new IncorrectDataError('ID пользователя'));
-      else next(new DefaultError(`ошибка получения пользователя: ${err.message}`));
+      else next(new DefaultError('Произошла ошибка при получении пользователя'));
     });
 }
 
@@ -32,7 +34,7 @@ function getMe(req, res, next) {
     })
     .catch((err) => {
       if (err.name === 'CastError') next(new IncorrectDataError('ID пользователя'));
-      else next(new DefaultError(`ошибка получения пользователя: ${err.message}`));
+      else next(new DefaultError('Произошла ошибка при получении пользователя'));
     });
 }
 
@@ -42,7 +44,7 @@ function updateProfile(req, res, next) {
     .then((newUser) => res.send(newUser))
     .catch((err) => {
       if (err.name === 'ValidationError') next(new IncorrectDataError('профиль'));
-      else next(new DefaultError(`обновление профиля: ${err.message}`));
+      else next(new DefaultError('Произошла ошибка при обновлении профиля'));
     });
 }
 
@@ -53,7 +55,7 @@ function updateAvatar(req, res, next) {
     .then((newUser) => res.send(newUser))
     .catch((err) => {
       if (err.name === 'ValidationError') next(new IncorrectDataError('аватар'));
-      else next(new DefaultError(`обновление аватара: ${err.message}`));
+      else next(new DefaultError('Произошла ошибка при обновлении аватара'));
     });
 }
 
@@ -73,7 +75,7 @@ function createUser(req, res, next) {
     .catch((err) => {
       if (err.name === 'ValidationError') next(new IncorrectDataError('почта/пароль'));
       else if (err.code === 11000) next(new ConflictError('пользователь с такой почтой уже существует'));
-      else next(new DefaultError(`ошибка создания пользователя: ${err.message}`));
+      else next(new DefaultError('Произошла ошибка при создании пользователя'));
     });
 }
 
@@ -100,9 +102,9 @@ function login(req, res, next) {
           message: 'успешная авторизация',
         });
     })
-    .catch((err) => {
+    .catch(() => {
       // ошибка аутентификации
-      next(new UnauthorizedError(err.message));
+      next(new UnauthorizedError('неверная почта или пароль'));
     });
 }
 
