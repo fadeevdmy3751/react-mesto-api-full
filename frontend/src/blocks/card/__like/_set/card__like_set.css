@@ -1,0 +1,4 @@
+.card__like_set {
+  background-image: url(../../../../images/heart_active.svg);
+  /*opacity: 1;*/
+}

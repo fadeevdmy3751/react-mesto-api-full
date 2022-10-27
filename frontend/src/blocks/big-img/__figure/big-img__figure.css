@@ -1,0 +1,7 @@
+.big-img__figure {
+  position: relative;
+  margin: 25px 0 0;
+  /*центрируем с подписью*/
+  cursor: default;
+}
+

@@ -1,0 +1,58 @@
+@import url(vendor/normalize.css);
+@import url(vendor/fonts/fonts.css);
+@import url(blocks/root/root.css);
+@import url(blocks/page/page.css);
+
+@import url(blocks/button/button.css);
+
+@import url(blocks/header/__link/header__link.css);
+@import url(blocks/header/__info/header__info.css);
+@import url(blocks/header/__logo/header__logo.css);
+@import url(blocks/header/__email/header__email.css);
+@import url(blocks/header/header.css);
+
+@import url(blocks/content/content.css);
+
+@import url(blocks/profile/__add-button/profile__add-button.css);
+@import url(blocks/profile/__edit-button/profile__edit-button.css);
+@import url(blocks/profile/__avatar/profile__avatar.css);
+@import url(blocks/profile/__info/profile__info.css);
+@import url(blocks/profile/__name/profile__name.css);
+@import url(blocks/profile/__description/profile__description.css);
+@import url(blocks/profile/profile.css);
+
+@import url(blocks/elements/elements.css);
+@import url(blocks/card/card.css);
+@import url(blocks/card/__image/card__image.css);
+@import url(blocks/card/__like/card__like.css);
+@import url(blocks/card/__like/_set/card__like_set.css);
+@import url(blocks/card/__like-count/card__like-count.css);
+@import url(blocks/card/__name/card__name.css);
+@import url(blocks/card/__delete/card__delete.css);
+/* @import url(../blocks/ */
+
+@import url(blocks/footer/footer.css);
+@import url(blocks/footer/__text/footer__text.css);
+
+@import url(blocks/form/__button/form__button.css);
+@import url(blocks/form/__button/_disabled/form__button_disabled.css);
+@import url(blocks/form/__field/form__field.css);
+@import url(blocks/form/__field/_error/form__field_error.css);
+@import url(blocks/form/__error/form__error.css);
+@import url(blocks/form/form.css);
+
+@import url(blocks/popup/__header/popup__header.css);
+@import url(blocks/popup/__close/popup__close.css);
+@import url(blocks/form/__error/_visible/form__error_visible.css);
+@import url(blocks/popup/popup.css);
+@import url(blocks/popup/_opened/popup_opened.css);
+
+@import url(blocks/big-img/big-img.css);
+@import url(blocks/big-img/__image/big-img__image.css);
+@import url(blocks/big-img/__figure/big-img__figure.css);
+@import url(blocks/big-img/__caption/big-img__caption.css);
+
+@import url(blocks/login/login.css);
+@import url(blocks/popup/__status/popup__status.css);
+
+/*@import url(../*/

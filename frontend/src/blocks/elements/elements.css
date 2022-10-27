@@ -1,0 +1,24 @@
+.elements {
+  display: grid;
+  grid-template-columns: repeat(3, 284px);
+  justify-content: center;
+  column-gap: 17px;
+  row-gap: 20px;
+  padding: 0 70px; /*-\\-*//*костыль чтобы не было 4 каточки*/
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1055px) {
+  .elements {
+    grid-template-columns: repeat(2, 284px);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .elements {
+    grid-template-columns: repeat(1, 284px);
+    padding: 0 19px;
+    margin-top: 36px;
+    grid-row-gap: 20px;
+  }
+}

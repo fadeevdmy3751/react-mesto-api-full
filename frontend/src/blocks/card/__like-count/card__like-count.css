@@ -1,0 +1,11 @@
+.card__like-count {
+  position: absolute;
+  right: 0;
+  width: 62px;
+    /*выравнивание по сердцу*/
+  bottom: 22px;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: black;
+}

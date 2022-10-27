@@ -1,0 +1,11 @@
+.form__button_disabled {
+  border: 1px solid #000000;
+  opacity: 0.2;
+  color: black;
+  background: white;
+  cursor: default;
+}
+
+.form__button_disabled:hover {
+  opacity: 0.2;  /*дабы не просыпалась от наведения*/
+}

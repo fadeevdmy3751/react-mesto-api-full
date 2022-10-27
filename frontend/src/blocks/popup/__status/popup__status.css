@@ -1,0 +1,26 @@
+.popup__status {
+    width: 120px;
+    height: 120px;
+    margin: 26px auto 32px;
+}
+
+.popup__status_success {
+    background-image: url(../../../images/success.svg);
+}
+
+.popup__status_fail {
+    background-image: url(../../../images/fail.svg);
+}
+
+.popup__container {
+    text-align: center;
+    width: 100%;
+    max-width: 430px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    padding: 34px 36px 37px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    cursor: default;
+}

@@ -1,0 +1,22 @@
+.form {
+  position: relative;
+  width: 430px;
+  /*min-height: 330px;*/
+  background: white;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 10px;
+  padding-left: 36px;
+  padding-right: 36px;
+  padding-top: 34px;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+@media screen and (max-width: 750px) {
+  .form {
+    width: 282px;
+    min-height: 322px;
+    padding: 25px 22px;
+  }
+}

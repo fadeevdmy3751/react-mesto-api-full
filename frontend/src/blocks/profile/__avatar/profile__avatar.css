@@ -1,0 +1,56 @@
+.profile__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: black;
+  background-image: url("../../../images/kusto.jpg"); /*for test*/
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1055px) {
+  .profile__avatar {
+    grid-column: 2;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .profile__avatar {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+/* затемнение с карандашом */
+.profile__avatar:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.8);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.profile__avatar:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../../images/pencil.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+}
+
+.profile__avatar:hover:before,
+.profile__avatar:hover:after {
+  opacity: 1;
+}

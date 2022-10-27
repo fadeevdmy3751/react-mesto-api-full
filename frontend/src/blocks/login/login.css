@@ -1,0 +1,121 @@
+.login {
+    max-width: 358px;
+    margin: 60px auto;
+    text-align: center;
+    width: 100%;
+    flex: 1 0 auto;
+}
+
+.login__title {
+    color: white;
+    margin: 0 0 47px;
+    font-size: 24px;
+    line-height: 1.208;
+    font-style: normal;
+    font-weight: 900;
+    text-align: center;
+}
+
+.login__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.login__fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.login__label {
+    margin-bottom: 35px;
+    display: flex;
+    position: relative;
+}
+
+.login__label:last-of-type {
+    margin-bottom: 216px;
+}
+
+.login__input {
+    background-color: black;
+    outline: none;
+    width: 100%;
+    padding: 2px 0 10px 0;
+    border: none;
+    border-bottom: 2px solid #CCCCCC;
+    font-size: 14px;
+    line-height: 1.214;
+    font-weight: 500;
+    font-style: normal;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+}
+
+.login__input:focus {
+    outline-style: solid;
+    outline-width: 2px;
+    border-radius: 2px;
+}
+
+::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.214;
+    font-style: normal;
+}
+
+.login__error {
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #FF0000;
+    font-style: normal;
+    font-weight: 400;
+    position: absolute;
+    top: 100%;
+    margin-top: 2px;
+    z-index: 200;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.login__button {
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    background-color: #ffffff;
+    min-height: 50px;
+    transition: opacity .3s ease;
+    font-size: 18px;
+    line-height: 1.2222;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.login__button:hover {
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.login__link {
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.214;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFFFFF;
+    display: block;
+    transition: opacity .3s ease;
+}
+
+.login__link:hover {
+    opacity: 0.6;
+}

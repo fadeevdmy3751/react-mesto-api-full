@@ -1,0 +1,22 @@
+.card__like {
+  width: 22px;
+  height: 19px;
+  background-image: url(../../../images/heart_basic.svg);
+  position: absolute;
+  right: 20px;
+  bottom: 41px;
+  background-color: transparent;
+  border: none;
+  transition: opacity .3s linear;
+}
+
+.card__like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/*последним чтобы при клике не делалось серым*/
+.card__like:active {
+  background-image: url(../../../images/heart_active.svg);
+  opacity: 1;
+}
